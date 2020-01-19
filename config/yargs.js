@@ -6,7 +6,7 @@ const descripcion = {
 
 const completado = {
     alias: 'c',
-    default: true,
+    default: false,
     des: 'Indica si la tarea esta completada'
 }
 
@@ -18,7 +18,9 @@ const argv = require('yargs') //recibe (nombre de comando, descripción, objeto)
         descripcion,
         completado
     })
-    .command('listar', 'Lista todas las tareas creadas')
+    .command('listar', 'Lista todas las tareas creadas', {
+        completado
+    })
     .command('borrar', 'Elimina una tarea', {
         descripcion
     })

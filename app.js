@@ -21,8 +21,11 @@ switch (comando) {
             })
 
         break;
-    case 'listar':
-        let listado = porHacer.getListado();
+    case 'listar': //por defecto, mostraremos solo las tareas que no esten completadas
+
+        let listado = [];
+
+        listado = porHacer.getListado(argv.completado);
 
         listado.forEach(element => {
             console.log('===========Por Hacer ============='.green);
